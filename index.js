@@ -42,6 +42,12 @@ addTask.onclick = function () {
   add();
 };
 
+document.querySelector("#inputText").addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    add();
+  }
+});
+
 document.getElementById("completed").addEventListener("click", function () {
   let completed = document.querySelectorAll(".complete");
 
