@@ -27,7 +27,7 @@ function add() {
           "line-through";
       } else {
         completed[i].parentNode.style.color = "white";
-        completed[i].parentNode.firstElementChild.style.textDecoration = "none";
+        completed[i].parentNode.style.textDecoration = "none";
       }
     });
   }
@@ -37,7 +37,7 @@ function add() {
 }
 
 const addTask = document.querySelector(".add");
-// console.log(addTask);
+console.log(addTask);
 addTask.onclick = function () {
   add();
 };
