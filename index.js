@@ -2,6 +2,7 @@ const taskHistory = [];
 
 function add() {
   let inputText = document.getElementById("inputText");
+
   let container = document.getElementById("containerTodo");
   let taskList = document.createElement("div");
   taskList.innerHTML = `
@@ -27,7 +28,7 @@ function add() {
           "line-through";
       } else {
         completed[i].parentNode.style.color = "white";
-        completed[i].parentNode.style.textDecoration = "none";
+        completed[i].parentNode.firstElementChild.style.textDecoration = "none";
       }
     });
   }
@@ -41,12 +42,6 @@ console.log(addTask);
 addTask.onclick = function () {
   add();
 };
-
-document.querySelector("#inputText").addEventListener("keyup", function (e) {
-  if (e.key === "Enter") {
-    add();
-  }
-});
 
 document.getElementById("completed").addEventListener("click", function () {
   let completed = document.querySelectorAll(".complete");
@@ -79,3 +74,9 @@ viewAllTask.onclick = function () {
     completed[i].parentNode.style.display = "flex";
   }
 };
+
+document.querySelector("#inputText").addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    add();
+  }
+});
