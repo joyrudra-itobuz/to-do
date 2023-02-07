@@ -33,7 +33,7 @@ function add() {
     });
   }
   taskHistory.push(inputText.value);
-  //   console.log(taskHistory);
+  console.log(taskHistory);
   inputText.value = "";
 }
 
